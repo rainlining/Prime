@@ -1,0 +1,12 @@
+app:
+  name: "Prime Code Agent"
+  workspace_display: true
+
+runtime:
+  max_steps: 8
+  model: "fake"
+
+storage:
+  checkpoints_path: "data/checkpoints/checkpoints.jsonl"
+  traces_path: "data/traces/traces.jsonl"
+  reports_path: "data/reports/turn_reports.jsonl"
