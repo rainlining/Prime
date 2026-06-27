@@ -328,6 +328,7 @@ prime-code-agent/
 | [x] | A1 | 初始化 Python 项目骨架和基础目录 | `pyproject.toml`, `src/prime/__init__.py`, `tests/unit/`, `tests/integration/`, `tests/e2e/`, `config/settings.yaml` | 项目包声明和基础配置 | `src/prime` 可被导入，pytest 可发现测试目录 | `pytest` |
 | [x] | A2 | 实现 `prime` CLI 入口 | `src/prime/cli/main.py`, `pyproject.toml` | `app`, `main()` | 安装后可执行 `prime`，启动时显示产品名和 workspace | `pytest tests/unit/cli` |
 | [x] | A3 | 实现 REPL 与 `/exit` | `src/prime/cli/main.py`, `src/prime/routing/session_router.py` | `run_repl()`, `SessionRouter.route()` | 输入 `/exit` 正常退出；普通输入进入任务路径占位 | `pytest tests/unit/routing`; `pytest tests/e2e/test_exit.py` |
+| [x] | A4 | 实现用户级 `prime` 安装入口 | `scripts/install-prime.ps1`, `README.md`, `tests/e2e/test_prime_console_script.py`, `tests/unit/scripts/test_install_prime_script.py` | `install-prime.ps1` | 用户可将 `prime` 安装为任意目录可调用的命令；启动后 workspace 为当前目录 | `pytest tests/unit/scripts`; `pytest tests/e2e/test_prime_console_script.py` |
 
 **阶段 B：核心类型与配置**
 
