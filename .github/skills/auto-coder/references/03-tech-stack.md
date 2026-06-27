@@ -1,0 +1,22 @@
+## 3. 技术选型
+
+- 语言版本：Python 3.11+。
+- CLI：Typer，用于定义 `prime` 命令入口。
+- 终端输出：Rich，用于 REPL banner、状态提示和错误展示。
+- 数据校验：Pydantic，用于 `TaskSpec`、`AgentDecision`、`ToolResult`、`Checkpoint`、`TurnReport` 等数据契约。
+- 配置格式：YAML。
+- 测试框架：pytest。
+- 存储格式：JSONL，用于 checkpoint、trace 和 turn report。
+- 模型客户端：`FakeModelClient`。真实模型客户端只保留 Future 设计，不进入 MVP 实现排期。
+- 包管理工具不强行指定；如果项目已有 `pyproject.toml`、锁文件或虚拟环境约定，则遵循现有项目。
+- 建议配置文件：`config/settings.yaml`。
+- 建议 prompt 文件：
+  - `config/prompts/router.txt`
+  - `config/prompts/agent_decision.txt`
+  - `config/prompts/finalizer.txt`
+- 建议数据目录：
+  - `data/checkpoints/checkpoints.jsonl`
+  - `data/traces/traces.jsonl`
+  - `data/reports/turn_reports.jsonl`
+- MVP 禁止引入真实模型 SDK 作为必需依赖。
+- MVP 禁止引入执行真实 shell、修改真实文件或访问真实项目内容的工具实现。
